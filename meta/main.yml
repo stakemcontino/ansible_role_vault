@@ -1,0 +1,31 @@
+---
+galaxy_info:
+  author: Paul Stakem
+  description: Hashicorp Vault Role
+  company: Contino
+
+  # Some suggested licenses:
+  # - BSD (default)
+  # - MIT
+  # - GPLv2
+  # - GPLv3
+  # - Apache
+  # - CC-BY
+  license: BSD
+
+  min_ansible_version: 1.2
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Debian
+      versions:
+        - jessie
+
+  galaxy_tags:
+    - system
+    - hashicorp
+    - security
+
+dependencies: []

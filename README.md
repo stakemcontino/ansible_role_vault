@@ -27,6 +27,59 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - { role: username.rolename, x: 42 }
 
+Molecule
+--------
+
+The full documentation can be found [here](http://molecule.readthedocs.io/en/latest/)
+
+**Assumptions**
+You have ansible, docker and python 2.7 installed
+
+**Prerequisites**
+Create a python virtualenv
+    virtualenv -p /usr/local/bin/python2.7 venv
+    source venv/bin/activate
+    pip install ansible 'docker<3.0.0' molecule
+
+**For the impatient - tl;dr**
+   cd ansible_role_vault && molecule test
+
+**Breaking down what happens above**
+
+[Molecule Lint](http://molecule.readthedocs.io/en/latest/usage.html#lint)
+
+Out of the box, molecule lint runs 3 tasks:
+# https://yamllint.readthedocs.io/en/latest/
+# https://github.com/willthames/ansible-lint
+# http://flake8.pycqa.org/en/latest/
+
+To run molecule lint
+    cd ansible_role_vault
+    molecule lint
+
+[Molecule Create](http://molecule.readthedocs.io/en/latest/usage.html#create)
+
+Creates an instance, in this case a docker machine to test the ansible role.
+
+To run molecule create
+    molecule create
+
+[Molecule Converge](http://molecule.readthedocs.io/en/latest/usage.html#converge)
+
+Takes the docker instance created above and runs the molecule/default/playbook.yml
+    molecule converge
+
+[Molecule Idempotence](https://molecule.readthedocs.io/en/latest/usage.html#idempotence)
+
+Checks the role is idempotent, typically it will identify tasks that use run commands (shell, command, raw, script) instead of a module.
+    molecule idempotence
+
+[Molecule verify](https://molecule.readthedocs.io/en/latest/usage.html#verify)
+
+Verify will run any tests that are defined in molecule/default/tests/test_default.py
+    molecule verify
+
+
 License
 -------
 

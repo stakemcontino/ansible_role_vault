@@ -1,1 +1,5 @@
 ---
+vault_version: 0.9.3
+vault_url: https://releases.hashicorp.com/vault/
+vault_checksum: 4ba8b9dafb903d20b4c87e8954015a07a6995f53a9650ac02b39e6cae502645e
+vault_download: https://releases.hashicorp.com/vault/0.9.3/vault_0.9.3_linux_amd64.zip

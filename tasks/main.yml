@@ -1,1 +1,19 @@
 ---
+- name: vault group
+  group:
+    name: vault
+    system: "yes"
+
+- name: vault user
+  user:
+    name: vault
+    group: vault
+    system: "yes"
+
+- name: Download vault and verify checksum
+  get_url:
+    url: "{{ vault_url }}"
+    dest: /usr/local/bin/vault
+    group: vault
+    owner: vault
+    mode: 0755

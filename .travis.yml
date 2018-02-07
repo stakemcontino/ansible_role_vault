@@ -1,0 +1,16 @@
+---
+sudo: required
+language: python
+services:
+  - docker
+before_install:
+  - sudo apt-get -qq update
+install:
+  - pip install ansible molecule 'docker<3.0.0'
+script:
+  - molecule lint
+  - molecule create
+  - molecule converge
+  - molecule idempotence
+  - molecule verify
+  - molecule destroy

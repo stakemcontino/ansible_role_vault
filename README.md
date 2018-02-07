@@ -1,5 +1,6 @@
 ## Ansible Role Vault
 
+[![Build Status](https://travis-ci.org/stakemcontino/ansible_role_vault.svg?branch=master)](https://travis-ci.org/stakemcontino/ansible_role_vault)
 Ansible role in install hashicorp vault
 
 ## Requirements
@@ -81,6 +82,8 @@ Verify will run any tests that are defined in molecule/default/tests/test_defaul
 
 Teardown what had was created in the steps above
     molecule destroy
+
+Link to [Travis](https://travis-ci.org/stakemcontino/ansible_role_vault)
 
 ## License
 
